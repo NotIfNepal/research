@@ -1,0 +1,99 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"data": {
+			"description": "Contains all the data for scrapping and config pages.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"type": {
+						"enum": [
+							"university"
+						],
+						"description": "Used to conditionally change the schema type."
+					},
+					"name": {
+						"type": "string",
+						"description": "The name of the campus or college"
+					},
+					"university_name": {
+						"enum": [
+							"TU",
+							"PU",
+							"KU"
+						],
+						"description": "Short name for the university, used to change the scrapper type."
+					},
+					"notification_page_link": {
+						"type": "string",
+						"description": "main notification page link for scrapping."
+					},
+					"notification_type": {
+						"type": "array",
+						"description": "used to define the different types of notification provided by college.",
+						"items": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string",
+									"description": "Name of the notification type"
+								},
+								"link": {
+									"type": "string",
+									"description": "filter link of the notification type"
+								}
+							},
+							"required": [
+								"name",
+								"link"
+							],
+							"additionalProperties": false
+						}
+					},
+					"programs": {
+						"type": "array",
+						"description": "Different programs available in the college",
+						"items": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string",
+									"description": "Name of the Program"
+								},
+								"link": {
+									"type": "string",
+									"description": "Link of the notification page where this program filter is applied, provided only when program type filter is present in the notification page."
+								}
+							},
+							"required": [
+								"name"
+							],
+							"additionalProperties": false
+						}
+					}
+				},
+				"required": [
+					"type"
+				],
+				"if": {
+					"properties": {
+						"type": {
+							"const": "university"
+						}
+					}
+				},
+				"then": {
+					"required": [
+						"name",
+						"university_name",
+						"notification_page_link",
+						"notification_type",
+						"programs"
+					]
+				}
+			}
+		}
+	}
+}
