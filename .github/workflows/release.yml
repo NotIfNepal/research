@@ -1,0 +1,55 @@
+name: Release
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v7
+        with: 
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+
+      - name: setting up the ajv
+        run: |
+          npm i -g ajv-cli
+
+      - name: validate json data
+        id: validation
+        run: | 
+          ajv validate -s schema.json -d data.json
+          
+          if [[ $? -eq 0 ]];then
+            echo "valid=true" >> $GITHUB_OUTPUT; 
+          fi
+
+      - name: Determine Next Version
+        if: steps.validation.outputs.valid == true
+        id: versioning
+        uses: paulhatch/semantic-version@v5.4.0
+        with:
+          tag_prefix: "v"
+          major_pattern: "(MAJOR)"
+          minor_pattern: "(MINOR)"
+          version_format: "${major}.${minor}.${patch}"
+
+
+      - name: create release
+        if: steps.validation.outputs.valid == true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NEXT_TAG: v${{ steps.versioning.outputs.version }}
+        run: |
+          gh release create "$TAG_NAME" \
+            --target ${{ github.sha }} \
+            --title "Release $TAG_NAME" \
+            --generate-notes
+
