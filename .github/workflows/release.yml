@@ -54,5 +54,5 @@ jobs:
           gh release create "$NEXT_TAG" \
             --target ${{ github.sha }} \
             --title "Release $NEXT_TAG" \
-            --generate-notes
-
+            --generate-notes \
+            data.json
