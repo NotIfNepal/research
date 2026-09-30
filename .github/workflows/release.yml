@@ -27,12 +27,15 @@ jobs:
         run: | 
           ajv validate -s schema.json -d data.json
           
-          if [[ $? -eq 0 ]];then
+          if [[ $? -eq 0 ]]; then
             echo "valid=true" >> $GITHUB_OUTPUT; 
+          else
+            echo "validation falied"
+            exit 0
           fi
 
       - name: Determine Next Version
-        if: steps.validation.outputs.valid == true
+        if: steps.validation.outputs.valid == 'true'
         id: versioning
         uses: paulhatch/semantic-version@v5.4.0
         with:
@@ -43,7 +46,7 @@ jobs:
 
 
       - name: create release
-        if: steps.validation.outputs.valid == true
+        if: steps.validation.outputs.valid == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NEXT_TAG: v${{ steps.versioning.outputs.version }}
