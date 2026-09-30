@@ -51,8 +51,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NEXT_TAG: v${{ steps.versioning.outputs.version }}
         run: |
-          gh release create "$TAG_NAME" \
+          gh release create "$NEXT_TAG" \
             --target ${{ github.sha }} \
-            --title "Release $TAG_NAME" \
+            --title "Release $NEXT_TAG" \
             --generate-notes
 
