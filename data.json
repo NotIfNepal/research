@@ -1,4 +1,318 @@
 {
 	"$schema": "./schema.json",
-	"data": []
+	"data": [
+		{
+			"university_name": "Tribhuvan University (TU)",
+			"faculties": [
+				{
+					"name": "Institute of Engineering (IOE)",
+					"notification_page_link": "https://ioe.edu.np/notices",
+					"notification_type": [
+						{
+							"name": "All Notices",
+							"link": "https://ioe.edu.np/notices"
+						},
+						{
+							"name":"General Notices",
+							"link":"https://ioe.edu.np/notices?notice_type=475"
+						},
+						{
+							"name":"Career Notices",
+							"link":"https://ioe.edu.np/notices?notice_type=45"
+						}
+					],
+					"colleges": [
+						{
+							"name": "Pulchowk Campus (Central Campus)",
+							"link": "https://puc.tu.edu.np/notices",
+							"notification_type": [
+								{
+									"name":"All Notices",
+									"link":"https://puc.tu.edu.np/notices"
+								},
+								{
+									"name":"General Notices",
+									"link":"https://puc.tu.edu.np/notices?notice_type=25"
+								}
+							],
+							"programs": [
+								{ "name": "Civil Engineering" },
+								{ "name": "Computer Engineering" },
+								{ "name": "Electrical Engineering" },
+								{ "name": "Electronics & Communication Engineering" },
+								{ "name": "Mechanical Engineering" },
+								{ "name": "Architecture" },
+								{ "name": "Aerospace Engineering" },
+								{ "name": "Automobile Engineering" },
+								{ "name": "Chemical Engineering" },
+								{ "name": "Geomatics Engineering" },
+								{ "name": "Master of Engineering (ME)" }
+							]
+						},
+						{
+							"name": "Thapathali Campus",
+							"link": "https://thc.tu.edu.np/notices",
+							"notification_type": [
+								{
+									"name":"All Notices",
+									"link":"https://thc.tu.edu.np/notices"
+								},
+								{
+									"name":"Scholarship Notices",
+									"link":"https://thc.tu.edu.np/notices?notice_type=709"
+								},
+								{
+									"name":"Admission Notices",
+									"link":"https://thc.tu.edu.np/notices?notice_type=707"
+								}
+							],
+							"programs": [
+								{ "name": "Civil Engineering" },
+								{ "name": "Computer Engineering" },
+								{ "name": "Electronics & Communication Engineering" },
+								{ "name": "Mechanical Engineering" },
+								{ "name": "Automobile Engineering" },
+								{ "name": "Industrial Engineering" }
+							]
+						},
+						{
+							"name": "Pashchimanchal Campus (Western Region Campus)",
+							"link": "https://ioepas.edu.np/notices",
+							"notification_type": [
+								{
+									"name":"All Notices",
+									"link":"https://ioepas.edu.np/category/news-notices"
+								},
+								{
+										"name":"Admin Notices",
+										"link":"https://ioepas.edu.np/category/news-notices/admin-notice"
+								},
+								 {
+										"name":"Admission Notices",
+										"link":"https://ioepas.edu.np/category/news-notices/admission-notice"
+									},
+									{
+										"name":"RMU Notices",
+										"link":"https://ioepas.edu.np/category/news-notices/rmu-notice"
+									},
+									{
+										"name":"CSSGS Notices",
+										"link":"https://ioepas.edu.np/category/news-notices/cssgs-notice"
+									}
+							],
+							"programs": [
+								{ "name": "Civil Engineering" },
+								{ "name": "Computer Engineering" },
+								{ "name": "Electrical Engineering" },
+								{ "name": "Electronics & Communication" },
+								{ "name": "Mechanical Engineering" },
+								{ "name": "Geomatics Engineering" }
+							]
+						},
+						{
+							"name": "Purwanchal Campus (Eastern Region Campus)",
+							"link": "https://purc.tu.edu.np/notices",
+							"notification_type": [
+								{
+									"name":"All Notices",
+									"link":"https://purc.tu.edu.np/notices"
+								},
+								{
+									"name":"Urgent Notices",
+									"link":"https://purc.tu.edu.np/notices?notice_type=305"
+								},
+								{
+									"name":"Tender Notices",
+									"link":"https://purc.tu.edu.np/notices?notice_type=289"
+								},
+								{
+									"name":"General Notices",
+									"link":"https://purc.tu.edu.np/notices?notice_type=251"
+								}
+							],
+							"programs": [
+								{ "name": "Civil Engineering" },
+								{ "name": "Computer Engineering" },
+								{ "name": "Electrical Engineering" },
+								{ "name": "Electronics & Communication" },
+								{ "name": "Mechanical Engineering" },
+								{ "name": "Agricultural Engineering" }
+							]
+						},
+						{
+							"name": "Chitwan Engineering Campus",
+							"link": "https://cec.tu.edu.np/notices",
+							"programs": [
+								{ "name": "Architecture" }
+							]
+						}
+					]
+				},
+				{
+					"name": "Institute of Medicine (IOM)",
+					"notification_page_link": "https://iom.edu.np",
+					"notification_type": [
+						{
+							"name": "Notices",
+							"link": "https://iom.edu.np"
+						}
+					],
+					"colleges": [
+						{
+							"name": "Maharajgunj Medical Campus & Teaching Hospitals",
+							"link": "https://mmciom.edu.np",
+							"notification_type": [
+								{
+									"name": "Academic-Notice",
+									"link": "https://mmciom.edu.np/notice-category/academic/"
+								},
+								{
+									"name": "Administrative-Notice",
+									"link": "https://mmciom.edu.np/notice-category/administrative-notice/"
+								},
+								{
+									"name": "Recent Events",
+									"link": "https://mmciom.edu.np/category/recent-events/"
+								},
+								{
+									"name":"Vacancy",
+									"link":"https://mmciom.edu.np/notice-category/vacancy/"
+								},
+								{
+									"name":"Holiday",
+									"link":"https://mmciom.edu.np/notice-category/holiday/"
+								},
+								{
+									"name":"Examination(Internal)",
+									"link":"https://mmciom.edu.np/notice-category/examination/"
+								},
+								{
+									"name":"Scholarship",
+									"link":"https://mmciom.edu.np/notice-category/scholarship/"
+								},
+								{
+									"name":"FSU",
+									"link":"https://mmciom.edu.np/notice-category/fsu/"
+								}
+							],
+							"programs": [
+								{ "name": "MBBS" },
+								{ "name": "BDS" },
+								{ "name": "BNS" },
+								{ "name": "BSc Nursing" },
+								{ "name": "B.Pharm" },
+								{ "name": "BPH" },
+								{ "name": "MD/MS" },
+								{ "name": "DM/MCh" }
+							]
+						}
+					]
+				},
+				{
+					"name": "Institute of Science & Technology (IOST)",
+					"notification_page_link": "https://iost.tu.edu.np",
+					"notification_type": [
+						{
+							"name": "Notices",
+							"link": "https://iost.tu.edu.np"
+						}
+					],
+					"colleges": [
+						{
+							"name": "Central Department & Constituent Campuses",
+							"link": "https://iost.tu.edu.np",
+							"programs": [
+								{ "name": "BSc CSIT" },
+								{ "name": "Physics" },
+								{ "name": "Chemistry" },
+								{ "name": "Mathematics" },
+								{ "name": "Microbiology" },
+								{ "name": "Zoology" },
+								{ "name": "Botany" },
+								{ "name": "Food Technology" }
+							]
+						}
+					]
+				},
+				{
+					"name": "Faculty of Management",
+					"notification_page_link": "https://tupm.com.np",
+					"notification_type": [
+						{
+							"name": "Notices",
+							"link": "https://tupm.com.np"
+						}
+					],
+					"colleges": [
+						{
+							"name": "Central Department and Constituent/Affiliated Campuses",
+							"link": "https://tupm.com.np",
+							"programs": [
+								{ "name": "BBA" },
+								{ "name": "BBM" },
+								{ "name": "BIM" },
+								{ "name": "BPA" },
+								{ "name": "MBA" },
+								{ "name": "MBS" }
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"university_name": "Kathmandu University (KU)",
+			"faculties": [
+				{
+					"name": "School of Engineering",
+					"notification_page_link": "https://ku.edu.np/news-app",
+					"notification_type": [
+						{
+							"name": "News & Notices",
+							"link": "https://ku.edu.np/news-app"
+						}
+					],
+					"colleges": [
+						{
+							"name": "KU Central Campus, Dhulikhel",
+							"link": "https://soe.ku.edu.np",
+							"programs": [
+								{ "name": "BE Computer Engineering" },
+								{ "name": "BE Civil Engineering" },
+								{ "name": "BE Electrical & Electronics Engineering" },
+								{ "name": "BE Mechanical Engineering" },
+								{ "name": "BE Chemical Engineering" },
+								{ "name": "BE Geomatics Engineering" },
+								{ "name": "BIT" },
+								{ "name": "B.Tech (AI & Cybersecurity)" }
+							]
+						}
+					]
+				},
+				{
+					"name": "School of Medical Sciences",
+					"notification_page_link": "https://ku.edu.np",
+					"notification_type": [
+						{
+							"name": "Notices",
+							"link": "https://ku.edu.np"
+						}
+					],
+					"colleges": [
+						{
+							"name": "Dhulikhel Hospital KU Hospital (KUSMS)",
+							"link": "https://kusms.edu.np",
+							"programs": [
+								{ "name": "MBBS" },
+								{ "name": "BSc Nursing" },
+								{ "name": "B.Pharm" },
+								{ "name": "Physiotherapy" },
+								{ "name": "MD/MS" }
+							]
+						}
+					]
+				}
+			]
+		}
+	]
 }

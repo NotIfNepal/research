@@ -2,96 +2,95 @@
 	"type": "object",
 	"properties": {
 		"data": {
-			"description": "Contains all the data for scrapping and config pages.",
 			"type": "array",
+			"description": "Contains hierarchical data for universities, institutes, campuses, and programs.",
 			"items": {
 				"type": "object",
 				"properties": {
-					"type": {
-						"enum": [
-							"university"
-						],
-						"description": "Used to conditionally change the schema type."
-					},
-					"name": {
-						"type": "string",
-						"description": "The name of the campus or college"
-					},
 					"university_name": {
-						"enum": [
-							"TU",
-							"PU",
-							"KU"
-						],
-						"description": "Short name for the university, used to change the scrapper type."
-					},
-					"notification_page_link": {
 						"type": "string",
-						"description": "main notification page link for scrapping."
+						"description": "Full or short name of the university (e.g., TU, KU, PU)"
 					},
-					"notification_type": {
+					"faculties": {
 						"type": "array",
-						"description": "used to define the different types of notification provided by college.",
+						"description": "List of faculties, schools, or institutes under the university",
 						"items": {
 							"type": "object",
 							"properties": {
 								"name": {
 									"type": "string",
-									"description": "Name of the notification type"
+									"description": "Name of the faculty or institute (e.g., Institute of Engineering - IOE)"
 								},
-								"link": {
+								"notification_page_link": {
 									"type": "string",
-									"description": "filter link of the notification type"
+									"description": "Main notification or scrape link for this institute/faculty"
+								},
+								"notification_type": {
+									"type": "array",
+									"description": "Different types of notification filters available",
+									"items": {
+										"type": "object",
+										"properties": {
+											"name": { "type": "string" },
+											"link": { "type": "string" }
+										},
+										"required": ["name", "link"],
+										"additionalProperties": false
+									}
+								},
+								"colleges": {
+									"type": "array",
+									"description": "Constituent or affiliated campuses/colleges under this institute",
+									"items": {
+										"type": "object",
+										"properties": {
+											"name": {
+												"type": "string",
+												"description": "Name of the specific campus or college"
+											},
+											"notification_type": {
+												"type": "array",
+												"description": "Different types of notification filters available for this college/campus",
+												"items": {
+													"type": "object",
+													"properties": {
+														"name": { "type": "string" },
+														"link": { "type": "string" }
+													},
+													"required": ["name", "link"],
+													"additionalProperties": false
+												}
+											},
+											"link": {
+												"type": "string",
+												"description": "Website link for the specific college or campus"
+											},
+											"programs": {
+												"type": "array",
+												"description": "Programs offered by this specific college/campus",
+												"items": {
+													"type": "object",
+													"properties": {
+														"name": { "type": "string" },
+														"link": { "type": "string" }
+													},
+													"required": ["name"],
+													"additionalProperties": false
+												}
+											}
+										},
+										"required": ["name", "programs"],
+										"additionalProperties": false
+									}
 								}
 							},
-							"required": [
-								"name",
-								"link"
-							],
-							"additionalProperties": false
-						}
-					},
-					"programs": {
-						"type": "array",
-						"description": "Different programs available in the college",
-						"items": {
-							"type": "object",
-							"properties": {
-								"name": {
-									"type": "string",
-									"description": "Name of the Program"
-								},
-								"link": {
-									"type": "string",
-									"description": "Link of the notification page where this program filter is applied, provided only when program type filter is present in the notification page."
-								}
-							},
-							"required": [
-								"name"
-							],
+							"required": ["name", "notification_page_link", "colleges"],
 							"additionalProperties": false
 						}
 					}
 				},
-				"required": [
-					"type"
-				],
-				"if": {
-					"properties": {
-						"type": {
-							"const": "university"
-						}
-					}
-				},
-				"then": {
-					"required": [
-						"name",
-						"university_name",
-						"notification_page_link",
-						"notification_type",
-						"programs"
-					]
-				}
+				"required": ["university_name", "faculties"],
+				"additionalProperties": false
 			}
 		}
 	}
