@@ -55,4 +55,4 @@ jobs:
             --target ${{ github.sha }} \
             --title "Release $NEXT_TAG" \
             --generate-notes \
-            data.json
+            data.json schema.json
